@@ -3,7 +3,7 @@ import {ToDoItem} from "./todo-item";
 function ToDoActionBar(){
     this.checkExistanceInList = function(toDoText,toDoManager){
         var exists;
-        var toDoInput = document.getElementById("text-Box1"); 
+        var toDoInput = document.getElementById("input-todo"); 
         for(var key of toDoManager.listOfToDoMap.keys()){
             if(toDoManager.listOfToDoMap.get(key).toDoText === toDoText) {
                 toDoInput.value = "";
@@ -33,7 +33,7 @@ ToDoActionBar.prototype.init = function(toDoManager){
     
 ToDoActionBar.prototype.addToDoEvent = function(toDoManager){     
     var toDoEvent, clone, timeStampValue;  
-    var toDoInput = document.getElementById("text-Box1");      
+    var toDoInput = document.getElementById("input-todo");      
     var toDoText = toDoInput.value;
     const toDoItem = new ToDoItem();
     if(!toDoText) {
