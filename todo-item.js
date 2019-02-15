@@ -21,7 +21,7 @@ ToDoItem.prototype.operations = function(event, toDoManager){
             var targetItem = event.target;
             toDoItemId =  (function (targetItem){
                 while(true){
-                    var targetAttributeValue = targetItem.getAttribute("data-name");
+                    var targetAttributeValue = targetItem.getAttribute("wrapper-name");
                     if(targetAttributeValue !== "todo-wrapper"){
                         targetItem = targetItem.parentElement;
                     }else{
@@ -46,7 +46,7 @@ ToDoItem.prototype.operations = function(event, toDoManager){
                 case "update":
                 toDoManager.listOfToDoMap.get(parseInt(toDoItemId)).updateToDoList(toDoItemId, selectedToDoItemContent, toDoManager);
                             break;
-                case "checkbox":
+                case "checkbox":  //selectedToDO
                 toDoManager.listOfToDoMap.get(parseInt(toDoItemId)).setCheckedStatus();
                 toDoManager.render();
                             break;
